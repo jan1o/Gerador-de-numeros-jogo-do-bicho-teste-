@@ -18,10 +18,8 @@ def opcao():
 
 def sorteador():
     lista = bd.getBichos()
-    bichos = []
     for x in range(10):
-        bichos.append(lista.pop(lista.index(max(lista))))
-    print(bichos)    
+        print(lista[x])   
     
     
     

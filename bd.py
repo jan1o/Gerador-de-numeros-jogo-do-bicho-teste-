@@ -47,7 +47,7 @@ class bd:
     def getBichos():
         connection = sqlite3.connect('bichos.db')
         c = connection.cursor()
-        c.execute("SELECT id from bichos")
+        c.execute("SELECT * from bichos ORDER BY peso DESC")
         
         lista = []
         for b in c.fetchall():
