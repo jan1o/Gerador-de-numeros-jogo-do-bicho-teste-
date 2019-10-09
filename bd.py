@@ -44,6 +44,16 @@ class bd:
         c.execute("UPDATE bichos SET peso = peso + ? WHERE id = ?",(peso, bicho))
         connection.commit()
 
+    def getBichos():
+        connection = sqlite3.connect('bichos.db')
+        c = connection.cursor()
+        c.execute("SELECT id from bichos")
+        
+        lista = []
+        for b in c.fetchall():
+            lista.append(b)
+        return lista
+
 
 
 

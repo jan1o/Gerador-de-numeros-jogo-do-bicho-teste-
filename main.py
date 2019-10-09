@@ -1,5 +1,7 @@
 from random import *
 import sqlite3
+import os
+from bd import *
 
 def inicio():
     op = opcao()
@@ -15,15 +17,24 @@ def opcao():
     return x
 
 def sorteador():
+    lista = bd.getBichos()
     bichos = []
-    for i in range(10):
-        x = randint(1,20)
-        bichos.append(x)
-    print(bichos)
+    for x in range(10):
+        bichos.append(lista.pop(lista.index(max(lista))))
+    print(bichos)    
+    
+    
+    
     
     
 def adicionador():
-    pass
+    os.system("cls")
+    num = "x"
+    while num != 's':
+        num = input("Digite um numero, ou s para sair:\n")
+        if num != 's':
+            bd.addPeso(int(num),1)
+            
 
     
                       
